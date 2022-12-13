@@ -29,7 +29,7 @@ git clone https://github.com/AppServiceMigrations/BulkAppMigration.git
 ```
 2. Check to make sure you are connected the right subscription.  Run [Get-AzContext](https://learn.microsoft.com/en-us/powershell/module/az.accounts/get-azcontext) to verify.  If you need to change to a different subscription, you can list available by calling [Get-AzSubscription](https://learn.microsoft.com/en-us/powershell/module/az.accounts/get-azsubscription), and then run [Set-AzContext -Subscription "xxxx-xxxx-xxxx-xxxx"](Set-AzContext -Subscription "xxxx-xxxx-xxxx-xxxx") with the correct Id.
 
-3.  Switch to the folder of the Github repo you cloned.  Assuming you accepted the default folder, this would be `cd /clouddrive/BulkAppMigration/tests`.  Note that case-sensitivity matters.
+3.  Switch to the folder of the Github repo you cloned.  Assuming you accepted the default folder, this would be `cd /clouddrive/App-Service-Migration-Assistant/AzureVmAssessmentFeature`.  Note that case-sensitivity matters.
 
 4. Navigate to the [Application Migration Scripts page](https://azure.microsoft.com/en-us/products/app-service/migration-tools/), click _Download Now_ under _App Service migration assistant for PowerShell scripts (preview)_, accept the EULA and you will see a zip file of the scripts downloaded. Upload this zip file to the blob storage accessible by your virtual machines. Do not change the name of the file and put it in the root of the container. The script will expect the scripts in the zip file as is when it downloads.
 5. Run the [Invoke-Assessment.ps1](/scripts/Invoke-Assessment.ps1) script to run pre-flight checks and perform the application assessment on each of your virtual machines. 
