@@ -10,7 +10,7 @@ There are two core components, below:
 -   The Console Script will support PowerShell core in order to run using Cloud Shell (linux container), and will require both internet access and access to a blob storage container that the virtual machines can also access.
 -   Execution requires a pre-created blob container, and the list of virtual machines to assess (with the exception of having the option to run on all virtual machines within a resource group). Virtual machine discovery is beyond scope.  Some examples for how to query ARM and produce a list of target virtual machines will be provided as an example rather than a feature.
 -   The initial release will target Azure Virtual Machines only.  Virtual Machine Scale Sets and Cloud Server Web Roles may work as well, but will not be tested, and are currently unsupported targets.
--   Target virtual machines must be running a Windows Server OS 2008R2 or later, have a minimum of PowerShell 4.0, have the Azure Virtual Machine host agent provisioned, and have network access to the user-specified blob storage container.
+-   Target virtual machines must be running a Windows Server OS 2008R2 or later, have a minimum of PowerShell 5.0, have the Azure Virtual Machine host agent provisioned, and have network access to the user-specified blob storage container.
 -   The minimum TLS version of your Azure VM and your storage account must match. Our scripts do not check for this dependency. 
 -   Once the virtual machine script is running, there is currently no way to stop it from executing.  The host agent will abort it after 90 minutes if it does not finish sooner.
 
