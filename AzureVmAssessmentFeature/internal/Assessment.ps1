@@ -1,4 +1,4 @@
-#requires -version 4.0
+#Requires -Version 4.0
 
 param (
     [Parameter()]
@@ -94,8 +94,9 @@ try {
         -ContainerName $ContainerName `
         -BlobName "AppServiceMigrationScripts.zip"
 
-    Invoke-RestMethod @request -OutFile ".\AppServiceMigrationScripts.zip"
-    Expand-Archive -Path ".\AppServiceMigrationScripts.zip" -DestinationPath ".\" -Force
+    Invoke-RestMethod @request -OutFile "$PSScriptRoot\AppServiceMigrationScripts.zip"
+
+    Expand-Archive -Path "$PSScriptRoot\AppServiceMigrationScripts.zip" -DestinationPath "$PSScriptRoot" -Force
 }
 catch {
     $Host.UI.WriteErrorLine("Assessment failed (dependencies) [$($_.Exception.Message)]")
@@ -104,7 +105,7 @@ catch {
 
 # Assessment
 try {
-    $null = .\Get-SiteReadiness.ps1
+    . $PSScriptRoot\Get-SiteReadiness.ps1 | Out-Null
 }
 catch {
     $Host.UI.WriteErrorLine("Assessment failed (readiness) [$($_.Exception.Message)]")
@@ -131,7 +132,7 @@ try {
         -AccountName $AccountName `
         -AccountKey $AccountKey `
         -ContainerName $ContainerName `
-        -FilePath ".\ReadinessResults.json" `
+        -FilePath "$PSScriptRoot\ReadinessResults.json" `
         -BlobName "$($metadata.compute.resourceGroupName)/ReadinessResults_$($($($env:computername).ToLower()).Trim()).json"
 
     Invoke-RestMethod @request
