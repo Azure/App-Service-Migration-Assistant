@@ -41,23 +41,23 @@ process {
     }
 
     # Resources
-    if (!$PSBoundParameters.ContainsKey("VirtualMachineNames")) {
-        Write-Verbose -Message "Retrieving virtual machines in resource group [$($ResourceGroupName)]"
+    if ($PSBoundParameters.ContainsKey("VirtualMachineNames")) {
+        Write-Verbose -Message "Retrieving virtual machines [$($virtualMachineNames)] in resource group [$($ResourceGroupName)]"
         try {
-            $virtualMachines = Get-AzVM -ResourceGroupName $ResourceGroupName -Status -Debug:$false
+            $virtualMachines = Get-AzVM -ResourceGroupName $ResourceGroupName -Status -Debug:$false `
+            | Where-Object { $virtualMachineNames -contains $_.Name }
         }
         catch {
             Write-Error -Message "Assessment failed (resources) $($PSItem.Exception.Message))"
         }
     }
     else {
-        $virtualMachines = $virtualMachineNames | ForEach-Object {
-            try {
-                Get-AzVM -ResourceGroupName $ResourceGroupName -Name $PSItem -Status -Debug:$false
-            }
-            catch {
-                Write-Error -Message "Assessment failed (resources) $($PSItem.Exception.Message))"
-            }
+        Write-Verbose -Message "Retrieving virtual machines in resource group [$($ResourceGroupName)]"
+        try {
+            $virtualMachines = Get-AzVM -ResourceGroupName $ResourceGroupName -Status -Debug:$false
+        }
+        catch {
+            Write-Error -Message "Assessment failed (resources) $($PSItem.Exception.Message))"
         }
     }
 
@@ -80,7 +80,6 @@ process {
             $virtualMachine.Assessment.Unsupported = $true
             continue
         }
-
         # Operating System
         if ($virtualMachine.StorageProfile.OsDisk.OsType -ne "Windows") {
             $virtualMachine.Assessment.Unsupported = $true
