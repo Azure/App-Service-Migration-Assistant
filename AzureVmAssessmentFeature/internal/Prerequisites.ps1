@@ -17,7 +17,7 @@ if ($system.ProductType -ne 3) {
 }
 
 # PowerShell Version
-if ($shell.PSVersion.Major -lt 4) {
+if ($shell.PSVersion.Major -lt 5) {
     $Host.UI.WriteErrorLine("Unsupported PowerShell Version [$($shell.PSVersion)]")
     return
 }
