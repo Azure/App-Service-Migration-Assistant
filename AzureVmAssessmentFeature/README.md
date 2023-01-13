@@ -3,8 +3,8 @@ The goal of this feature is to enable Azure App Service migration assessment at 
 
 # Components
 There are two core components, below:
-1. Console Script - [Assessment.ps1](/scripts/Assessment.ps1). The script would typically be run by by a user interactively in a script host environment (Azure cloud shell, Powershell desktop, etc).  The script takes a list of Azure Virtual Machiness, performs some pre-flight checks, and then stages and configures the virtual machine script below to run remotely on each virtual machine. It will create a log file locally that details which virtual machines failed the pre-flight checks and why. 
-2. VM Scripts - [Assessment.ps1](/scripts/internal/Assessment.ps1) and [Prerequisites.ps1](/scripts/internal/Prerequisites.ps1). This script runs "headless" on each virtual machine.  It executes the App Service Migration Assessment, and uploads the results to blob storage. 
+1. Console Script - [Assessment.ps1](Assessment.ps1). The script would typically be run by by a user interactively in a script host environment (Azure cloud shell, Powershell desktop, etc).  The script takes a list of Azure Virtual Machiness, performs some pre-flight checks, and then stages and configures the virtual machine script below to run remotely on each virtual machine. It will create a log file locally that details which virtual machines failed the pre-flight checks and why. 
+2. VM Scripts - [Assessment.ps1](internal/Assessment.ps1) and [Prerequisites.ps1](internal/Prerequisites.ps1). This script runs "headless" on each virtual machine.  It executes the App Service Migration Assessment, and uploads the results to blob storage. 
 
 # Requirements
 -   The Console Script will support PowerShell core in order to run using Cloud Shell (linux container), and will require both internet access and access to a blob storage container that the virtual machines can also access.
@@ -25,15 +25,15 @@ See [Microsoft PowerShell documentation](https://learn.microsoft.com/en-us/power
 ### Steps
 1. Clone this repo.  The easiest option is to open [Cloudshell](https://shell.azure.com), making sure the to select PowerShell as your shell, and then run:
 ```
-git clone https://github.com/AppServiceMigrations/BulkAppMigration.git
+git clone https://github.com/Azure/App-Service-Migration-Assistant.git
 ```
 2. Check to make sure you are connected the right subscription.  Run [Get-AzContext](https://learn.microsoft.com/en-us/powershell/module/az.accounts/get-azcontext) to verify.  If you need to change to a different subscription, you can list available by calling [Get-AzSubscription](https://learn.microsoft.com/en-us/powershell/module/az.accounts/get-azsubscription), and then run [Set-AzContext -Subscription "xxxx-xxxx-xxxx-xxxx"](Set-AzContext -Subscription "xxxx-xxxx-xxxx-xxxx") with the correct Id.
 
 3.  Switch to the folder of the Github repo you cloned.  Assuming you accepted the default folder, this would be `cd /clouddrive/App-Service-Migration-Assistant/AzureVmAssessmentFeature`.  Note that case-sensitivity matters.
 
 4. Navigate to the [Application Migration Scripts page](https://azure.microsoft.com/en-us/products/app-service/migration-tools/), click _Download Now_ under _App Service migration assistant for PowerShell scripts (preview)_, accept the EULA and you will see a zip file of the scripts downloaded. Upload this zip file to the blob storage accessible by your virtual machines. Do not change the name of the file and put it in the root of the container. The script will expect the scripts in the zip file as is when it downloads.
-5. 
-6. Run the [Assessment.ps1](/scripts/Assessment.ps1) script to run pre-flight checks and perform the application assessment on each of your virtual machines. 
+5. Run the [Dependencies.ps1](Dependencies.ps1) and pass it the zip file path of the scripts you downloaded in the previous step. 
+6. Run the [Assessment.ps1](Assessment.ps1) script to run pre-flight checks and perform the application assessment on each of your virtual machines. 
  
     You will need the following parameters to run this script successfully:
     ```
