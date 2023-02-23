@@ -1,7 +1,7 @@
 #  At-Scale discovery and assessment for .NET apps on Azure VMs
 The goal of this feature is to enable Azure App Service migration assessment at scale for applications running on Azure Windows Virtual Machines. These scripts are a wrapper for the existing [Azure App Service Migration Readiness Assessment](https://github.com/Azure/App-Service-Migration-Assistant/wiki/PowerShell-Scripts) and execute the scripts remotely using parallel processing. Note this is for assessments only and the migration of applications is not currently supported. 
 
-[![At-Scale discovery for .NET apps on Azure VMs Demo](/docs/assets/img/intro-video.png)](https://youtu.be/5o58_Ue9nYo "At-Scale discovery for .NET apps on Azure VMs")
+[![At-Scale discovery for .NET apps on Azure VMs Demo](/AzureVmAssessmentFeature/docs/assets/img/intro-video.png)](https://youtu.be/5o58_Ue9nYo "At-Scale discovery for .NET apps on Azure VMs")
 
 > Visit [Tech Community Blog](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/assess-asp-net-web-apps-at-scale-to-accelerate-your-app/ba-p/3718361) for details
 
