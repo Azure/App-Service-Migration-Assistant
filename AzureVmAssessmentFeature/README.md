@@ -1,4 +1,4 @@
-#  Bulk Azure App Service Migration
+#  At-Scale discovery and assessment for .NET apps on Azure VMs
 The goal of this feature is to enable Azure App Service migration assessment at scale for applications running on Azure Windows Virtual Machines. These scripts are a wrapper for the existing [Azure App Service Migration Readiness Assessment](https://github.com/Azure/App-Service-Migration-Assistant/wiki/PowerShell-Scripts) and execute the scripts remotely using parallel processing. Note this is for assessments only and the migration of applications is not currently supported. 
 
 [![At-Scale discovery for .NET apps on Azure VMs Demo](/docs/assets/img/intro-video.png)](https://youtu.be/5o58_Ue9nYo "At-Scale discovery for .NET apps on Azure VMs")
@@ -60,8 +60,6 @@ git clone https://github.com/Azure/App-Service-Migration-Assistant.git
     AccountKey: Account key for your storage account
 
     ContainerName: Name of blob container that contains the zip file of the [Application Migration Scripts](https://github.com/Azure/App-Service-Migration-Assistant/wiki/PowerShell-Scripts) and where your migration results will be uploaded
-
-    EnableTelemetry: Defaults to true. Allows us to collect info about the use of our software. 
 
     ```
     ### Example
