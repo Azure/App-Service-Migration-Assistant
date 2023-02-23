@@ -43,7 +43,7 @@ git clone https://github.com/Azure/App-Service-Migration-Assistant.git
 
 3.  Switch to the folder of the Github repo you cloned.  Assuming you accepted the default folder, this would be `cd /clouddrive/App-Service-Migration-Assistant/AzureVmAssessmentFeature`.  Note that case-sensitivity matters.
 
-4. Navigate to the [Application Migration Scripts page](https://azure.microsoft.com/en-us/products/app-service/migration-tools/), click _Download Now_ under _App Service migration assistant for PowerShell scripts (preview)_, accept the EULA and you will see a zip file of the scripts downloaded. Upload this zip file to the blob storage accessible by your virtual machines. Do not change the name of the file and put it in the root of the container. The script will expect the scripts in the zip file as is when it downloads.
+4. Navigate to the [Application Migration Scripts page](https://azure.microsoft.com/en-us/products/app-service/migration-tools/), click _Download Now_ under _App Service migration assistant for PowerShell scripts_, accept the EULA and you will see a zip file of the scripts downloaded. Upload this zip file to the blob storage accessible by your virtual machines. Do not change the name of the file and put it in the root of the container. The script will expect the scripts in the zip file as is when it downloads.
 5. Run the [Dependencies.ps1](Dependencies.ps1) and pass it the zip file path of the scripts you downloaded in the previous step. 
 6. Run the [Assessment.ps1](Assessment.ps1) script to run pre-flight checks and perform the application assessment on each of your virtual machines. 
  
@@ -62,7 +62,7 @@ git clone https://github.com/Azure/App-Service-Migration-Assistant.git
     ContainerName: Name of blob container that contains the zip file of the [Application Migration Scripts](https://github.com/Azure/App-Service-Migration-Assistant/wiki/PowerShell-Scripts) and where your migration results will be uploaded
 
     EnableTelemetry: Defaults to true. Allows us to collect info about the use of our software. 
-    
+
     ```
     ### Example
 
