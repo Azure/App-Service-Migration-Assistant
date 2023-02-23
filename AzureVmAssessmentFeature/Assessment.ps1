@@ -22,6 +22,9 @@ param (
     [String]$ContainerName,
 
     [Parameter(Mandatory = $false)]
+    [bool]$EnableTelemetry = $true,
+
+    [Parameter(Mandatory = $false)]
     [Int]$ThrottleLimit = 10
 )
 
@@ -121,6 +124,7 @@ process {
             -ScriptPath $using:PSScriptRoot\internal\Assessment.ps1 `
             -ScriptParameters $scriptParameters `
             -Execution "Assessment" `
+            -EnableTelemetry $using:EnableTelemetry `
             -AccessToken $using:accessToken `
             -Verbose:$using:VerbosePreference `
             -Debug:$using:DebugPreference

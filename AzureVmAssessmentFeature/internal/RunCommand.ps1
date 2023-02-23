@@ -17,7 +17,10 @@ param(
     [String]$Execution,
 
     [Parameter(Mandatory = $true)]
-    [String]$AccessToken
+    [String]$AccessToken,
+
+    [Parameter(Mandatory = $false)]
+    [bool]$EnableTelemetry = $true
 )
 
 begin {
@@ -30,6 +33,11 @@ begin {
     $headers = @{
         "Authorization" = "Bearer $($accessToken)"
         "Content-Type"  = "application/json"
+    }
+
+    if($EnableTelemetry)
+    {
+        $headers.Add("User-Agent", "pid-55387b6f-e649-41b2-9832-c18c45981ad7");
     }
 
     $body = @{
