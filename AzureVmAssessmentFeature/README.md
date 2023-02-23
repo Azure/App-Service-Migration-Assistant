@@ -24,7 +24,7 @@ The software may collect information about you and your use of the software and 
 
 ### Telemetry Configuration
 
-Telemetry collection is on by default.  To opt-out, add the optional parameter `-EnableTelemetry $False` when calling the Assessment.ps1 script (Step #5 below). 
+Telemetry collection is on by default.  To opt-out, add the optional parameter `-EnableTelemetry $False` when calling the Assessment.ps1 script (Step #6 below). 
 
 # Executing the assessment scripts
 
@@ -60,6 +60,9 @@ git clone https://github.com/Azure/App-Service-Migration-Assistant.git
     AccountKey: Account key for your storage account
 
     ContainerName: Name of blob container that contains the zip file of the [Application Migration Scripts](https://github.com/Azure/App-Service-Migration-Assistant/wiki/PowerShell-Scripts) and where your migration results will be uploaded
+
+    EnableTelemetry: Defaults to true. Allows us to collect info about the use of our software. 
+    
     ```
     ### Example
 
