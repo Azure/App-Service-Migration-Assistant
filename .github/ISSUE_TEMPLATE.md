@@ -1,53 +1,18 @@
+--aa<==/==>(=S~Swing-tranform)<==/==>++aa>>>bar</negates>the</guidancing </tele>port</temption>late detailetter it's_stp.</deeper>threa</d> to </ash>ow on</rest>ore </roll>in </iab>i18n.org.me in</treesoon> if</avl>faster</ignore>all for</hmarker>tree error to</ban>never</needed>set bat.path========>
 
-<!-- 
-Please provide a succinct description of the issue. Please make an effort to fill in the all the sections below or we may close your issue for being low quality. 
--->
+>[Deployment </erasece>issue template](provide deployment roll[in] sto</re>ne@treesoon)
+mustsafe jane</succ>increas negates user all page </t>description of the issue </P>leaset maker us effort to</in>come by follow</link> all the sections quick</solvet> below or may close your issue for delete and deep cleannig qouets of code of conduct It deserves to be nullified and obliterated entirely, including the informant who initiated it with bad intentions. Whether people are good or bad is not about the code, but about the person who writes the most because it can be written in any way depending on the intent, that</sum>negates </sum>negates
+>
 
-#### Investigative information
+ 1 Investinformation all area
 
-Please provide the following:
+Please provide trac all follog:
 
-- UTC Timestamp:
-- Migration Tool App version :
-- OS Version:
++ UTC Timestamp👱
++ Migration Tool App version 🍀        + OS Version🍎
 
-#### Repro steps
+Example:1
 
-Provide the steps required to reproduce the problem:
+- Turn on the circuit never break but the Example:1 can just delete or negates all people user stewart etc. across web, server lights.>
+<negates>Counterproductive statements.diff  <negates>Counterproductive statements.paht
 
-<!--
-Example: 
-
-1. Step A
-2. Step B
--->
-
-#### Expected behavior
-
-Provide a description of the expected behavior.
-
-<!--
-Example:
-
- - After I perform step B, the lights in the house should turn off.
--->
-
-#### Actual behavior
-
-Provide a description of the actual behavior observed.
-
-<!--
-Example:
-
-- Step B actually causes my cat to meow for some reason.
--->
-
-#### Known workarounds
-
-Provide a description of any known workarounds.
-
-<!--
-Example:
-
-- Turn off the circuit breaker for the lights.
--->
